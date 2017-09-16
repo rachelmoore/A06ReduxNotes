@@ -96,7 +96,7 @@ const removePost = (post) => ({
 });
 ```
 
-Don't freak when no additional specs beyond the first three run, they need the thunk action creators written in order to pass. But this gets them out of the way. 
+Don't freak when no additional specs beyond the first three pass, they need the thunk action creators written in order to pass. But this gets them out of the way. 
 
 Next, the thunk action creators. The names are defined in the specs and are the same as the names of the functions making $.ajax calls that we wrote in post_api_util.js. The accompanying argument that must be passed in (if there is one) is also the same as the one we passed into the $.ajax call. Pull up that file for reference while working on these. 
 
@@ -167,9 +167,9 @@ const PostsReducer = (oldState = {}, action) => {
       return oldState;
   }
 };
-```
 
 export default PostsReducer;
+```
 
 
 ### reducers/root_reducer.js 
