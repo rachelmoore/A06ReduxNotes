@@ -1,5 +1,6 @@
+# A06 Redux Notes:
 
-###reactA06.jsx 
+### reactA06.jsx 
 
 In this file, we add an event listener which listens for the page to be loaded. Once it is loaded, we create a store variable by assigning store to calling configureStore();. We also create a root variable by assigning root to calling document.getElementById('root');. This finds the root div inside root.html.erb, the main place where everything in our SPA will live.
 
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-###util/post_api_util.js
+### util/post_api_util.js
 
 These are are $.ajax calls to the database. Open a terminal window with rails routes for reference while creating the functions defined in the specs. These routes will help determine what the method and url for each function is.
 
@@ -68,7 +69,7 @@ export const deletePost = (id) => (
 )
 ```
 
-###actions/post_actions.js 
+### actions/post_actions.js 
 
 The specs ask for three constants: RECEIVE_ALL_POSTS, RECEIVE_POST, and REMOVE_POST. It is best to define these constants at the top of the file and then immediately write the accompanying regular ol' action creators. Like so: 
 
@@ -127,7 +128,7 @@ export const deletePost = (id) => dispatch => (
 );
 ```
 
-###reducers/posts_reducer.js 
+### reducers/posts_reducer.js 
 
 Onto reducers! Start with the PostsReducer. First we want to set the oldState argument being passed in to an empty object as the default state. Then we want to call Object.freeze(oldState) before creating the switch statement. 
 
@@ -171,7 +172,7 @@ const PostsReducer = (oldState = {}, action) => {
 export default PostsReducer;
 
 
-###reducers/root_reducer.js 
+### reducers/root_reducer.js 
 
 The root reducer is quite simple here. Just export and call combineReducers, passing in the PostsReducer under the key posts: 
 
@@ -184,7 +185,7 @@ export default combineReducers({
 });
 ```
 
-###store/store.js
+### store/store.js
 
 This one is easy as well. Inside of the configureStore function we are just returning calling configureStore() with three arguments: the reducer, the preloaded state, and the applyMiddleware function with thunk passed in. Everything you need in this function is either being imported at the top of the file or passed into the function configureStore (in the case of the preloadedState). 
 
